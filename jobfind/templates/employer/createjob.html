@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <h4>{{jobform.as_p}}</h4>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

@@ -1,0 +1,31 @@
+<form method="post" action="{% url 'ad_login' %}" class="login-form">
+    {% csrf_token %}
+  <div>
+    <label >User Name </label>
+    <input
+           id="name"
+           type="text"
+           placeholder="Eren Buruk"
+           name="name"
+           required
+           />
+  </div>
+
+  <div>
+    <label>Password </label>
+    <input
+           id="password"
+           type="password"
+           placeholder="password"
+           name="password"
+           required
+           />
+  </div>
+
+  <button class="btn btn--form" type="submit" value="Log in">
+    Log in
+  </button>
+</form>
+</div>
+</body>
+</html>

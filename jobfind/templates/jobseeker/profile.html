@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+profile
+{% if data.resume %}
+<h4>Full Name {{data.first_name}} {{data.last_name}}</h4>
+<h4>Highest Qualification {{data.highest_qualification}}</h4>
+<h4>Current Location {{data.current_location}}</h4>
+<a href= "{% url 'editprofile' user.id %}">Edit</a>
+{% else %}
+<h1>Complete Your Profile</h1>
+    <p>Please upload your resume to complete your profile.<a href= "{% url 'regseeker' user.id %}">register</a></p>
+    {% endif %}
+{% endblock %}

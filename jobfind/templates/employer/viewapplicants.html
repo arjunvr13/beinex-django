@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Applicants for Job: {{ job.job_title }}</h1>
+    <table border='1'>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Highest Qualification</th>
+                <th>Location</th>
+                <th>Resume</th>
+                <th>Cover Letter</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for applicant in applicants %}
+            <tr>
+                <td>{{ applicant.job_seeker.first_name }} {{applicant.job_seeker.last_name}}</td>
+                <td>{{applicant.job_seeker.highest_qualification}}</td>
+                <td>{{applicant.job_seeker.current_location}}</td>
+                <!-- <td>{{applicant.job_seeker.resume}}</td>
+                <td>{{applicant.job_seeker.cover_letter}}</td> -->
+                <td><a href="{{ applicant.job_seeker.resume.url }}">view</a></td>
+                <td><a href="{{ applicant.job_seeker.cover_letter.url }}">view</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
