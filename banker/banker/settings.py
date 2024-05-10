@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'transaction',
     'deposit',
     'loan',
+    'saving',
 
     'rest_framework',
     'rest_framework_simplejwt',

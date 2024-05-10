@@ -21,8 +21,6 @@ from transaction.models import Transaction
 
 
 class CustomerDetail(CreateAPIView):
-    # serializer_class = UserSerializer
-    # queryset = User.objects.all()
     permission_classes = [IsAuthenticated]
 
 
@@ -68,7 +66,7 @@ class CustomerDetail(CreateAPIView):
             )
 
             subject = 'Welcome to Our Bank!'
-            message = f'Dear {user_obj.first_name},\n\nWelcome to Our Bank! Your account has been successfully created.'
+            message = f'Dear {user_obj.first_name},\n\nWelcome to Our Bank! Your account has been successfully created.You can login with your email id and first name as default password(in lowercase) and then can reset the password'
             from_email = settings.EMAIL_HOST_USER 
             recipient_list = [user_obj.username]  
             send_mail(subject, message, from_email, recipient_list)
